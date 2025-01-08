@@ -1,6 +1,8 @@
+<!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
 import { client } from '@/services/client'
 import imageUrlBuilder from '@sanity/image-url'
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 const imageBuilder = imageUrlBuilder(client)
 
@@ -16,7 +18,7 @@ const query = `*[_type == "mitglied"] {
 
 const mitglieder = await client.fetch(query)
 
-function imageUrlFor(source: string) {
+function imageUrlFor(source: SanityImageSource): any {
   return imageBuilder.image(source)
 }
 </script>

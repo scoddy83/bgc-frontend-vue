@@ -6,7 +6,6 @@ import { RouterLink } from 'vue-router'
   <RouterLink to="/home">Home</RouterLink>
   <RouterLink to="/mitglieder">Mitglieder</RouterLink>
   <RouterLink to="/lieder">Stygli</RouterLink>
-  <!-- <v-app-bar-title><RouterLink to="/sujets">Sujets</RouterLink></v-app-bar-title> -->
 </template>
 
 <style scoped>

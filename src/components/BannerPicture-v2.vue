@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { client } from '@/services/client'
-import imageUrlBuilder from '@sanity/image-url'
-const imageBuilder = imageUrlBuilder(client)
+//import imageUrlBuilder from '@sanity/image-url'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import Countdown from '@/components/CountdownComp.vue'
+//const imageBuilder = imageUrlBuilder(client)
 
 let loading = false
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -32,10 +32,11 @@ try {
 } finally {
   loading = false
 }
-
+/*
 function imageUrlFor(source: string) {
   return imageBuilder.image(source)
 }
+*/
 </script>
 
 <template>

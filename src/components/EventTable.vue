@@ -81,8 +81,16 @@ function getYear(eventDatum: Date) {
             <h2>{{ event.name }}</h2>
           </div>
           <div>
-            <i class="material-icons">location_on</i>
-            <span>{{ event.ort }}</span>
+            <div class="w-33 float-left">
+              <i class="material-icons mt-5">location_on</i>
+              <span>{{ event.ort }}</span>
+            </div>
+            <div class="w-50 pl-10 float-right" v-if="event.link">
+              <i class="material-icons">link_on</i>
+              <span>
+                <a :href="event.link" target="_blank">mehr Info</a>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -93,6 +101,17 @@ function getYear(eventDatum: Date) {
 <style scoped>
 h1 {
   font-family: LithosProBlack;
+}
+
+a {
+  color: beige;
+  text-decoration: none;
+}
+
+a:hover {
+  color: bisque;
+  text-decoration: underline dotted;
+  font-weight: bold;
 }
 
 .eventsWrapper {
