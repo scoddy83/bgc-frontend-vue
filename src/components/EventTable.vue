@@ -67,26 +67,24 @@ function getYear(eventDatum: Date) {
 <template>
   <div class="pt-15 pb-15">
     <h1>Die nögschte Events vo dr BGC</h1>
-    <div class="eventsWrapper pt-10">
+    <div class="pt-10">
       <div v-for="event in events" :key="event" class="event">
-        <div class="date">
+        <div class="date mr-5">
           <div class="month">{{ getMonth(event.eventDatum) }}</div>
           <div class="right">
             <div class="day">{{ getDay(event.eventDatum) }}</div>
             <div class="year">{{ getYear(event.eventDatum) }}</div>
           </div>
         </div>
-        <div class="info">
-          <div>
-            <h2>{{ event.name }}</h2>
-          </div>
-          <div>
+        <div>
+          <h2>{{ event.name }}</h2>
+          <div class="w-100 pt-3 text-white">
             <div class="w-33 float-left">
-              <i class="material-icons mt-5">location_on</i>
+              <i class="material-icons pr-2">location_on</i>
               <span>{{ event.ort }}</span>
             </div>
-            <div class="w-50 pl-10 float-right" v-if="event.link">
-              <i class="material-icons">link_on</i>
+            <div class="w-50 pl-5 float-right" v-if="event.link">
+              <i class="material-icons pr-2">link</i>
               <span>
                 <a :href="event.link" target="_blank">mehr Info</a>
               </span>
@@ -122,12 +120,7 @@ a:hover {
   margin-top: 15px;
   height: 100px;
   border-bottom: 5px solid gold;
-}
-
-.info {
-  height: 90px;
-  float: left;
-  margin-left: 20px;
+  width: 95%;
 }
 
 .date {
